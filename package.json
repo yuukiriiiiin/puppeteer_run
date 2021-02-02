@@ -19,6 +19,7 @@
   "homepage": "https://github.com/yuukiriiiiin/puppeteer_run#readme",
   "dependencies": {
     "csv-writer": "^1.6.0",
+    "date-utils": "^1.2.21",
     "puppeteer": "^5.5.0"
   }
 }

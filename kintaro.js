@@ -1,4 +1,19 @@
 const puppeteer = require('puppeteer');
+require('date-utils');
+
+// 前の月の金太郎が表示されてないか確認っていうのを本当は入れたい
+const judgeMonth = async () => {
+  // 日付取得
+  const date = new Date();
+  const currentMonth = date.toFormat("M");
+
+  // 表示されている月を取得
+  let resultSelector = await page.$('.date > span:nth-child(3)')
+  let displayMonth = await (await resultSelector.getProperty('textContent')).jsonValue()
+
+  console.log(currentMonth !== displayMonth)
+  return currentMonth !== displayMonth
+}
 
 (async () => {
   const options = {
@@ -26,6 +41,7 @@ const puppeteer = require('puppeteer');
   await page.$eval("#endTimeD", element => element.value = '')
   await page.type("#startTimeD", process.argv[4])
   await page.type("#endTimeD", process.argv[5])
+  await page.type("#restTimeD", "0100")
   await page.click("#importBtn")
   const buttonTagAll = await page.$$('button');
   let tagText = [];
