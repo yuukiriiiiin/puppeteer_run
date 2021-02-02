@@ -1,0 +1,24 @@
+{
+  "name": "puppeteer_run",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuukiriiiiin/puppeteer_run.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuukiriiiiin/puppeteer_run/issues"
+  },
+  "homepage": "https://github.com/yuukiriiiiin/puppeteer_run#readme",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "puppeteer": "^5.5.0"
+  }
+}
