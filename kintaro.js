@@ -14,7 +14,7 @@ require('date-utils');
   }
   const options = {
     headless: false, // ヘッドレスをオフに
-    slowMo: 100  // 動作を遅く
+    // slowMo: 100  // 動作を遅く
   };
   const url = 'https://kintarou.r.recruit.co.jp/Lysithea/JSP_Files/authentication/WC010_1.jsp?dsname=lib.IASSTORE&PERSON_CODE=01039888&FROM=WC010_2'
   
@@ -50,6 +50,17 @@ require('date-utils');
     await browser.close()
     return 
   }
+
+  // const weekdays = ["日", "月", "火", "水", "木", "金", "土"] // いらない
+  const weeksNumber = Math.floor((d.getDate() - d.getDay() + 12 ) / 7)
+  // const calendarRows = await page.$$('.calendar-body > .calendar-row', el => {
+  //   el[weeksNumber - 1]
+  // })
+
+
+
+
+
   // 今日の入力フォームを開く
   await page.click('.today')
   // モーダルを開く
